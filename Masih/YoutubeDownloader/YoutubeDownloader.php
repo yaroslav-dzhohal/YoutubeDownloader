@@ -390,7 +390,10 @@ class YoutubeDownloader
 		try {
 			$response = $this->getUrl('https://www.youtube.com/get_video_info?' . http_build_query(array(
 					'video_id' => $this->videoId,
-					'eurl'     => 'https://youtube.googleapis.com/v/' . $this->videoId
+					'eurl'     => 'https://youtube.googleapis.com/v/' . $this->videoId,
+                    'html5' => 1,
+                    'c' => 'TVHTML5',
+                    'cver' => '6.20180913'
 				)));
 		} catch (YoutubeException $e) {
 			throw $e;
